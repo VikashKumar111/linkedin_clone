@@ -15,6 +15,7 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to your professional community</h1>
+                    <img src="/images/login-hero.svg" alt="hero image"/>
                 </Hero>
             </Section>
         </Container>
@@ -108,8 +109,7 @@ const Hero = styled.div`
         text-align: center;
         font-size: 20px;
         width: 100%;
-        line-height: 2;
-        
+        line-height: 2;  
     }
    }
 
