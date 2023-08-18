@@ -17,6 +17,12 @@ const Login = (props) => {
                     <h1>Welcome to your professional community</h1>
                     <img src="/images/login-hero.svg" alt="hero image"/>
                 </Hero>
+                <Form>
+                    <Google>
+                        <img src="/images/google.svg" alt="google image" />
+                        Sign In with Google
+                    </Google>
+                </Form>
             </Section>
         </Container>
     );
@@ -49,6 +55,7 @@ const Join = styled.a`
     font-size: 19px;
     padding: 10px 12px;
     text-decoration: none;
+    cursor: pointer;
     border-radius: 4px;
     color: rgba(0,0,0,0.6);
     margin-right: 12px;
@@ -63,6 +70,7 @@ const SignIn = styled.a`
     box-shadow: inset 0 0 0 1px #0a66c2;
     color: #0a66c2;
     border-radius: 24px;
+    cursor: pointer;
     transition-duration: 167ms;
     font-size: 19px;
     font-weight: 600;
@@ -127,5 +135,36 @@ const Hero = styled.div`
         height: initial;
     }
    }
+`;
+
+const Form = styled.div`
+     margin-top: 100px;
+     width: 408px;
+     @media (max-width: 768px) {
+        margin-top: 20px;
+     }
+
+`;
+const Google = styled.button`
+     display : flex;
+     justify-content : center;
+     align-items: center;
+     background-color: #fff;
+     height: 56px;
+     width: 100%;
+     border-radius: 28px;
+     cursor: pointer;
+     box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
+     inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0);
+     vertical-align: middle;
+     z-index: 0;
+     transition-duration: 167ms;
+     font-size: 20px;
+     color: rgba(0, 0, 0, 0.6);
+     &:hover{
+        background-color: rgba(207, 207, 207, 0.25);
+        color: rgba(0, 0, 0, 0.75);
+     }
+
 `;
 export default Login;
