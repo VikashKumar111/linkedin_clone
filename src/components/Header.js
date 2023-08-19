@@ -4,7 +4,19 @@ const Header = () => {
     return (
         <Container>
             <Content>
-                
+                <Logo>
+                 <a href="/home">
+                    <img src="/images/home-logo.svg" alt="home-logo" />    
+                 </a>
+                </Logo> 
+                <Search>
+                    <div>
+                        <input type="text" placeholder="Search"/>
+                    </div>
+                    <SearchIcon>
+                        <img src="/images/search-icon.svg" alt="search-icon" />
+                    </SearchIcon>
+                </Search>
             </Content>
         </Container>
     );
@@ -28,4 +40,12 @@ const Content = styled.div`
   min-height: 100%;
   max-width: 1128px;
 `;
+
+const Logo = styled.span`
+  margin-right: 8px;
+  font-size: 0px;
+`;
+
+const Search = styled.div``;
+const SearchIcon = styled.div``;
 export default Header;
