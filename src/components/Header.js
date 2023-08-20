@@ -49,6 +49,19 @@ const Header = () => {
                                 <span>Notifications</span>
                             </a>
                         </NavList>
+                        <User>
+                            <a>
+                                <img src="/images/user.svg" alt="user" />
+                                <span>Me</span>
+                                <img src="/images/down-icon.svg"  alt="down-icon"/>
+                            </a>
+                        </User>
+                        <Work>
+                            <a>
+                                <img src="/images/nav-work.svg" />
+                                <span>Work <img src="/images/down-icon.svg"  alt="down-icon"/> </span>
+                            </a>
+                        </Work>
                     </NavListWrap>
                 </Nav>
             </Content>
@@ -147,8 +160,6 @@ const NavListWrap = styled.ul`
         transition: transform 0.2s ease-in-out;
         width: 100%;
         border-color: rgba(0, 0, 0, 0.9);
-
-
     }
  }
 `;
@@ -190,5 +201,21 @@ const NavList = styled.li`
         }
     }
  
+`;
+
+const User = styled(NavList)`
+  a > img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+`;
+const Work = styled(User)`
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 `;
 export default Header;
