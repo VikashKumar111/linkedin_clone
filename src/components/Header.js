@@ -27,25 +27,25 @@ const Header = () => {
                         </NavList>
                         <NavList>
                             <a>
-                                <img src="/images/nav-network.svg" alt="nav-home" />
+                                <img src="/images/nav-network.svg" alt="network" />
                                 <span>My Networks</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img src="/images/nav-jobs.svg" alt="nav-home" />
+                                <img src="/images/nav-jobs.svg" alt="jobs" />
                                 <span>Jobs</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img src="/images/nav-messaging.svg" alt="nav-home" />
+                                <img src="/images/nav-messaging.svg" alt="messaging" />
                                 <span>messaging</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img src="/images/nav-notifications.svg" alt="nav-home" />
+                                <img src="/images/nav-notifications.svg" alt="notifications" />
                                 <span>Notifications</span>
                             </a>
                         </NavList>
@@ -53,7 +53,7 @@ const Header = () => {
                             <a>
                                 <img src="/images/user.svg" alt="user" />
                                 <span>Me</span>
-                                <img src="/images/down-icon.svg"  alt="down-icon"/>
+                                <img src="/images/down-icon.svg"  alt="icon"/>
                             </a>
                             <SignOut>
                                 <a>Sign Out</a>

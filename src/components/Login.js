@@ -15,11 +15,11 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to your professional community</h1>
-                    <img src="/images/login-hero.svg" alt="hero image"/>
+                    <img src="/images/login-hero.svg" alt="login"/>
                 </Hero>
                 <Form>
                     <Google>
-                        <img src="/images/google.svg" alt="google image" />
+                        <img src="/images/google.svg" alt="google" />
                         Sign In with Google
                     </Google>
                 </Form>

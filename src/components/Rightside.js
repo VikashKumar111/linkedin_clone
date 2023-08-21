@@ -7,6 +7,6 @@ const Rightside = () => {
 };
 
 const Container = styled.div`
-   grid-area: Rightside;
+   grid-area: rightside;
 `;
 export default Rightside;
