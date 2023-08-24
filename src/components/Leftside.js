@@ -55,6 +55,15 @@ const Photo = styled.div`
   background-image: url("/images/photo.svg");
   width: 72px;
   height: 72px;
+  box-sizing: border-box;
+  background-clip: content-box;
+  background-color: white;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  border: 2px solid white;
+  margin: -38px auto 12px;
+  border-radius: 50%;
 `;
 
 const Link = styled.div``;
