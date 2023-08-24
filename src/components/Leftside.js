@@ -73,6 +73,12 @@ const Link = styled.div`
   font-weight: 600;
 `;
 
-const AddPhotoText = styled.div``;
+const AddPhotoText = styled.div`
+  color: #0a66c2;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+`;
 
 export default Leftside;
