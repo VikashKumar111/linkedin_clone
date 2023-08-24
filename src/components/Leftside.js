@@ -14,6 +14,12 @@ const Leftside = () => {
             <AddPhotoText>Add a photo</AddPhotoText>
           </a>
         </UserInfo>
+        <Widget>
+          <a>
+            <span>Connections</span>
+            <span>Grow your network</span>
+          </a>
+        </Widget>
       </Artcard>
     </Container>
   );
@@ -80,5 +86,7 @@ const AddPhotoText = styled.div`
   line-height: 1.33;
   font-weight: 400;
 `;
+
+const Widget = styled.div``;
 
 export default Leftside;
