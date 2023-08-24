@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Leftside = () => {
   return (
     <Container>
-      <Artcard>
+      <ArtCard>
         <UserInfo>
           <CardBackground />
           <a>
@@ -29,7 +29,24 @@ const Leftside = () => {
             My Items
           </span>
         </Item>
-      </Artcard>
+      </ArtCard>
+      <CommunityCard>
+        <a>
+          <span>Groups</span>
+        </a>
+        <a>
+          <span>
+            Events
+            <img src="/images/plus-icon.svg" alt="" />
+          </span>
+        </a>
+        <a>
+          <span>Follow Hashtags</span>
+        </a>
+        <a>
+          <span>Discover More</span>
+        </a>
+      </CommunityCard>
     </Container>
   );
 };
@@ -38,7 +55,7 @@ const Container = styled.div`
   grid-area: leftside;
 `;
 
-const Artcard = styled.div`
+const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
   margin-bottom: 8px;
@@ -153,4 +170,5 @@ const Item = styled.a`
   }
 `;
 
+const CommunityCard = styled(ArtCard)``;
 export default Leftside;
