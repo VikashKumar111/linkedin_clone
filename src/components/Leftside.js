@@ -66,7 +66,12 @@ const Photo = styled.div`
   border-radius: 50%;
 `;
 
-const Link = styled.div``;
+const Link = styled.div`
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+`;
 
 const AddPhotoText = styled.div``;
 
