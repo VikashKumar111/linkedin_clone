@@ -14,7 +14,7 @@ const Rightside = () => {
               <Avatar />
             </a>
             <div>
-              <span>#linkedin</span>
+              <span>#Linkedin</span>
               <button>Follow</button>
             </div>
           </li>
@@ -28,6 +28,16 @@ const Rightside = () => {
             </div>
           </li>
         </FeedList>
+        <Recommendation>
+          View All recommendations
+          <img src="/images/right-icon.svg" alt="" />
+        </Recommendation>
+        <BannerCard>
+          <img
+            src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
+            alt=""
+          />
+        </BannerCard>
       </FollowCard>
     </Container>
   );
@@ -89,5 +99,20 @@ const FeedList = styled.ul`
   }
 `;
 
-const Avatar = styled.div``;
+const Avatar = styled.div`
+  background-image: url("https://static-exp1.licdn.com/sc/h/1b4vl1r54ijmrmcyxzoidwmxs");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+`;
+
+const Recommendation = styled.a`
+  color: #0a66c2;
+`;
+
+const BannerCard = styled(FollowCard)``;
+
 export default Rightside;
