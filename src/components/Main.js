@@ -3,29 +3,31 @@ import styled from "styled-components";
 const Main = () => {
   return (
     <Container>
-      <ShareBox>Share</ShareBox>
-      <div>
-        <img />
-        <button>Start a post</button>
-      </div>
-      <div>
-        <button>
+      <ShareBox>
+        Share
+        <div>
           <img />
-          <span>Photo</span>
-        </button>
-        <button>
-          <img />
-          <span>Video</span>
-        </button>
-        <button>
-          <img />
-          <span>Event</span>
-        </button>
-        <button>
-          <img />
-          <span>Write article</span>
-        </button>
-      </div>
+          <button>Start a post</button>
+        </div>
+        <div>
+          <button>
+            <img />
+            <span>Photo</span>
+          </button>
+          <button>
+            <img />
+            <span>Video</span>
+          </button>
+          <button>
+            <img />
+            <span>Event</span>
+          </button>
+          <button>
+            <img />
+            <span>Write article</span>
+          </button>
+        </div>
+      </ShareBox>
     </Container>
   );
 };
