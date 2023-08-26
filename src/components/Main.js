@@ -4,6 +4,10 @@ const Main = () => {
   return (
     <Container>
       <ShareBox>Share</ShareBox>
+      <div>
+        <img />
+        <button>Start a post</button>
+      </div>
     </Container>
   );
 };
