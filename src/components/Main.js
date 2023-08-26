@@ -8,6 +8,24 @@ const Main = () => {
         <img />
         <button>Start a post</button>
       </div>
+      <div>
+        <button>
+          <img />
+          <span>Photo</span>
+        </button>
+        <button>
+          <img />
+          <span>Video</span>
+        </button>
+        <button>
+          <img />
+          <span>Event</span>
+        </button>
+        <button>
+          <img />
+          <span>Write article</span>
+        </button>
+      </div>
     </Container>
   );
 };
