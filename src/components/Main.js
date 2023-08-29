@@ -6,24 +6,24 @@ const Main = () => {
       <ShareBox>
         Share
         <div>
-          <img />
+          <img src="/images/user.svg" alt="" />
           <button>Start a post</button>
         </div>
         <div>
           <button>
-            <img />
+            <img src="/images/Photo-icon.svg" alt="" />
             <span>Photo</span>
           </button>
           <button>
-            <img />
+            <img src="/images/Video.svg" alt="" />
             <span>Video</span>
           </button>
           <button>
-            <img />
+            <img src="/images/Event.svg" alt="" />
             <span>Event</span>
           </button>
           <button>
-            <img />
+            <img src="/images/Article.svg" alt="" />
             <span>Write article</span>
           </button>
         </div>
