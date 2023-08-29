@@ -11,20 +11,20 @@ const Main = () => {
         </div>
         <div>
           <button>
-            <img src="/images/Photo-icon.svg" alt="" />
+            <img src="/images/user.svg" alt="user" />
             <span>Photo</span>
           </button>
           <button>
-            <img src="/images/Video.svg" alt="" />
+            <img src="/images/user.svg" alt="user" />
             <span>Video</span>
           </button>
           <button>
-            <img src="/images/Event.svg" alt="" />
+            <img src="/images/user.svg" alt="user" />
             <span>Event</span>
           </button>
           <button>
-            <img src="/images/Article.svg" alt="" />
-            <span>Write article</span>
+            <img src="/images/user.svg" alt="user" />
+            <span>Article</span>
           </button>
         </div>
       </ShareBox>
@@ -58,5 +58,20 @@ const ShareBox = styled(CommonCard)`
   color: #958b7b;
   margin: 0 0 8px;
   background: white;
+  div {
+    button {
+      object-fit: contain;
+      outline: none;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 48px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+    }
+  }
 `;
 export default Main;
