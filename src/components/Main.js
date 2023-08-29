@@ -36,6 +36,9 @@ const Container = styled.div`
   grid-area: main;
   width: 670px;
   margin-right: -67px;
+  @media (max-width: 768px) {
+    width: 457px;
+  }
 `;
 
 const CommonCard = styled.div`
