@@ -28,6 +28,9 @@ const Main = () => {
           </button>
         </div>
       </ShareBox>
+      <div>
+        <Article>Article</Article>
+      </div>
     </Container>
   );
 };
@@ -71,6 +74,39 @@ const ShareBox = styled(CommonCard)`
       display: flex;
       align-items: center;
       font-weight: 600;
+    }
+    &:first-child {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px 0px 16px;
+      img {
+        width: 48px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      button {
+        margin: 4px 0;
+        flex-grow: 1;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 35px;
+        background-color: white;
+        text-align: left;
+      }
+    }
+    &:nth-child(2) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-right: 23px;
+      padding-bottom: 4px;
+      button {
+        img {
+          margin: 0 4px 0 -2px;
+        }
+        span {
+          color: #70b5f9;
+        }
+      }
     }
   }
 `;

@@ -107,7 +107,7 @@ const Search = styled.div`
         box-shadow: none;
         background-color: #eef3f8;
         border-radius: 2px;
-        color: rgba(0, 0, 0, 0.09);
+        color: rgba(0, 0, 0, 0.8);
         width: 218px;
         padding: 0 8px 0 40px;
         line-height: 1.75;
