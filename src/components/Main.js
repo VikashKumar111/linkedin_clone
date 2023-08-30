@@ -30,7 +30,7 @@ const Main = () => {
       </ShareBox>
       <div>
         <Article>
-          <SharedArticle>
+          <SharedActor>
             <a>
               <img src="/images/user.svg" alt="" />
               <div>
@@ -42,7 +42,31 @@ const Main = () => {
             <button>
               <img src="/images/ellipsis.svg" alt="" />
             </button>
-          </SharedArticle>
+          </SharedActor>
+          <Description>Description</Description>
+          <SharedImg>
+            <a>
+              <img src="/images/shared-image.png" alt="" />
+            </a>
+          </SharedImg>
+          <SocialCounts>
+            <li>
+              <button>
+                <img
+                  src="https://static.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l"
+                  alt=""
+                />
+                <img
+                  src="https://static.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo"
+                  alt=""
+                />
+                <span>75</span>
+              </button>
+            </li>
+            <li>
+              <a> 2 comments</a>
+            </li>
+          </SocialCounts>
         </Article>
       </div>
     </Container>
@@ -131,7 +155,7 @@ const Article = styled(CommonCard)`
   overflow: visible;
 `;
 
-const SharedArticle = styled.div`
+const SharedActor = styled.div`
   flex-wrap: nowrap;
   padding: 12px 16px 0;
   margin-bottom: 8px;
@@ -177,6 +201,49 @@ const SharedArticle = styled.div`
     outline: none;
     img {
       width: 30px;
+    }
+  }
+`;
+
+const Description = styled.div`
+  padding: 0 16px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 14px;
+  text-align: left;
+`;
+const SharedImg = styled.div`
+  margin-top: 8px;
+  width: 100%;
+  display: block;
+  position: relative;
+  background-color: #f9fafb;
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+`;
+const SocialCounts = styled.ul`
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+  margin: 0 16px;
+  padding: 8px 0;
+  border-bottom: #e9e5df;
+  list-style: none;
+  li {
+    margin-right: 5px;
+    font-size: 14px;
+    button {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      img {
+        height: 23px;
+        width: 30px;
+      }
     }
   }
 `;
