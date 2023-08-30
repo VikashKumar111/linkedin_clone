@@ -67,6 +67,22 @@ const Main = () => {
               <a> 2 comments</a>
             </li>
           </SocialCounts>
+          <button>
+            <img src="/images/like.svg" alt="" />
+            <span>Like</span>
+          </button>
+          <button>
+            <img src="/images/comment.png" alt="" />
+            <span>Comments</span>
+          </button>
+          <button>
+            <img src="/images/repost.png" alt="" />
+            <span>Repost</span>
+          </button>
+          <button>
+            <img src="/images/send.png" alt="" />
+            <span>Send</span>
+          </button>
         </Article>
       </div>
     </Container>
