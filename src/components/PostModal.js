@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
+import { useState } from "react";
 
 const PostModal = (props) => {
+  const [editorText, setEditorText] = useState("");
   return (
     <Container>
       <Content>
@@ -44,6 +46,7 @@ const PostModal = (props) => {
               Anyone
             </AssetButton>
           </ShareComment>
+          <PostButton>Post</PostButton>
         </SharedCreation>
       </Content>
     </Container>
@@ -169,4 +172,15 @@ const ShareComment = styled.div`
   }
 `;
 
+const PostButton = styled.button`
+  min-width: 60px;
+  border-radius: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #0a66c2;
+  color: white;
+  &:hover {
+    background: #004182;
+  }
+`;
 export default PostModal;
