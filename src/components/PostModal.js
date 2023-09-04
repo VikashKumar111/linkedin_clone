@@ -20,12 +20,14 @@ const PostModal = (props) => {
             <img src="/images/user.svg" alt="" />
             <span>Name</span>
           </UserInfo>
-          <textarea
-            value={editorText}
-            placeholder="What do you want to talk about"
-            onChange={(e) => setEditorText(e.target.value)}
-            autoFocus={true}
-          ></textarea>
+          <Editor>
+            <textarea
+              value={editorText}
+              placeholder="What do you want to talk about"
+              onChange={(e) => setEditorText(e.target.value)}
+              autoFocus={true}
+            ></textarea>
+          </Editor>
         </SharedContent>
         <SharedCreation>
           <AttachedAssets>
@@ -187,6 +189,20 @@ const PostButton = styled.button`
   color: white;
   &:hover {
     background: #004182;
+  }
+`;
+const Editor = styled.div`
+  padding: 12px 24px;
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+  }
+  input {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
 `;
 export default PostModal;
