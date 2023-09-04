@@ -20,6 +20,10 @@ const PostModal = (props) => {
             <img src="/images/user.svg" alt="" />
             <span>Name</span>
           </UserInfo>
+          <textarea
+            value={editorText}
+            onChange={(e) => setEditorText(e.target.value)}
+          ></textarea>
         </SharedContent>
         <SharedCreation>
           <AttachedAssets>
