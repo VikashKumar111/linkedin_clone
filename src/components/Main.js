@@ -28,7 +28,7 @@ const Main = (props) => {
         Share
         <div>
           <img src="/images/user.svg" alt="" />
-          <button>Start a post</button>
+          <button onClick={handleClick}>Start a post</button>
         </div>
         <div>
           <button>
@@ -108,7 +108,7 @@ const Main = (props) => {
           </SocialActions>
         </Article>
       </div>
-      <PostModal />
+      <PostModal showModal={showModal} handleClick={handleClick} />
     </Container>
   );
 };
