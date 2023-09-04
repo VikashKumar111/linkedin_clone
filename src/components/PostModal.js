@@ -22,7 +22,9 @@ const PostModal = (props) => {
           </UserInfo>
           <textarea
             value={editorText}
+            placeholder="What do you want to talk about"
             onChange={(e) => setEditorText(e.target.value)}
+            autoFocus={true}
           ></textarea>
         </SharedContent>
         <SharedCreation>
