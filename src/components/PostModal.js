@@ -1,11 +1,33 @@
 import { styled } from "styled-components";
 import { useState } from "react";
+import ReactPlayer from "react-player";
 
 const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
+  const [shareImage, setShareImage] = useState("");
+  const [videoLink, setVideoLink] = useState("");
+  const [assetArea, setAssetArea] = useState("");
+
+  const handleChange = (e) => {
+    let image = e.target.files[0];
+
+    if (image === "" || image === undefined) {
+      alert(`not an image, the file is ${typeof image}`);
+      return;
+    }
+    setShareImage(image);
+  };
+
+  const switchAssetArea = (area) => {
+    setShareImage("");
+    setVideoLink("");
+    setAssetArea(area);
+  };
 
   const reset = (e) => {
     setEditorText("");
+    setShareImage("");
+    setVideoLink("");
     props.handleClick(e);
   };
   return (
@@ -33,18 +55,50 @@ const PostModal = (props) => {
                   placeholder="What do you want to talk about"
                   onChange={(e) => setEditorText(e.target.value)}
                   autoFocus={true}
-                ></textarea>
+                />
+                {assetArea === "image" ? (
+                  <UploadImage>
+                    <input
+                      type="file"
+                      accept="image/gif, image/jpeg, image/png"
+                      name="image"
+                      id="file"
+                      style={{ display: "none" }}
+                      onChange={handleChange}
+                    />
+                    <p>
+                      <label htmlFor="file">Select an image to share</label>
+                    </p>
+                    {shareImage && (
+                      <img src={URL.createObjectURL(shareImage)} alt="" />
+                    )}
+                  </UploadImage>
+                ) : (
+                  assetArea === "media" && (
+                    <>
+                      <input
+                        type="text"
+                        placeholder="Please input a video link"
+                        value={videoLink}
+                        onChange={(e) => setVideoLink(e.target.value)}
+                      />
+                      {videoLink && (
+                        <ReactPlayer width={"100%"} url={videoLink} />
+                      )}
+                    </>
+                  )
+                )}
               </Editor>
             </SharedContent>
             <SharedCreation>
               <AttachedAssets>
-                <AssetButton>
+                <AssetButton onClick={() => switchAssetArea("image")}>
                   <img
                     src="data:image/png;base64,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"
                     alt=""
                   />
                 </AssetButton>
-                <AssetButton>
+                <AssetButton onClick={() => switchAssetArea("media")}>
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGznEqi14luW8bCVeXaEv4c_pGa_tInRAXsA&usqp=CAU"
                     alt=""
@@ -216,6 +270,13 @@ const Editor = styled.div`
     height: 35px;
     font-size: 16px;
     margin-bottom: 20px;
+  }
+`;
+
+const UploadImage = styled.div`
+  text-align: center;
+  img {
+    width: 100%;
   }
 `;
 export default PostModal;
