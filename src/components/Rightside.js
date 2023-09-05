@@ -45,9 +45,11 @@ const Rightside = () => {
 
 const Container = styled.div`
   grid-area: rightside;
+  margin-left: 100px;
   @media (max-width: 768px) {
     width: 457px;
     margin-bottom: 37px;
+    margin-left: 0px;
   }
 `;
 
