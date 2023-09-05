@@ -3,7 +3,7 @@ import PostModal from "./PostModal";
 import { useState } from "react";
 
 const Main = (props) => {
-  const [showModal, setShowModal] = useState("patch");
+  const [showModal, setShowModal] = useState("close");
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -32,19 +32,19 @@ const Main = (props) => {
         </div>
         <div>
           <button>
-            <img src="/images/user.svg" alt="user" />
+            <img src="/images/Photo-icon.svg" alt="user" />
             <span>Photo</span>
           </button>
           <button>
-            <img src="/images/user.svg" alt="user" />
+            <img src="/images/Video.svg" alt="user" />
             <span>Video</span>
           </button>
           <button>
-            <img src="/images/user.svg" alt="user" />
+            <img src="/images/Event.svg" alt="user" />
             <span>Event</span>
           </button>
           <button>
-            <img src="/images/user.svg" alt="user" />
+            <img src="/images/Article.svg" alt="user" />
             <span>Article</span>
           </button>
         </div>
@@ -180,6 +180,8 @@ const ShareBox = styled(CommonCard)`
       button {
         img {
           margin: 0 4px 0 -2px;
+          width: 40px;
+          height: 40px;
         }
         span {
           color: #70b5f9;
