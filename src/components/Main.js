@@ -3,6 +3,7 @@ import PostModal from "./PostModal";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getArticlesAPI } from "../actions";
+import ReactPlayer from "react-player";
 
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
@@ -69,64 +70,74 @@ const Main = (props) => {
           </ShareBox>
           <Content>
             {props.loading && <img src="/images/Spinner.gif" alt="" />}
-
-            <Article>
-              <SharedActor>
-                <a>
-                  <img src="/images/user.svg" alt="" />
-                  <div>
-                    <span>Title</span>
-                    <span>Info</span>
-                    <span>Date</span>
-                  </div>
-                </a>
-                <button>
-                  <img src="/images/ellipsis.svg" alt="" />
-                </button>
-              </SharedActor>
-              <Description>Description</Description>
-              <SharedImg>
-                <a>
-                  <img src="/images/shared-image.png" alt="" />
-                </a>
-              </SharedImg>
-              <SocialCounts>
-                <li>
-                  <button>
-                    <img
-                      src="https://static.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l"
-                      alt=""
-                    />
-                    <img
-                      src="https://static.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo"
-                      alt=""
-                    />
-                    <span>75</span>
-                  </button>
-                </li>
-                <li>
-                  <a> 2 comments</a>
-                </li>
-              </SocialCounts>
-              <SocialActions>
-                <button>
-                  <img src="/images/like.svg" alt="" />
-                  <span>Like</span>
-                </button>
-                <button>
-                  <img src="/images/comment.png" alt="" />
-                  <span>Comments</span>
-                </button>
-                <button>
-                  <img src="/images/repost.png" alt="" />
-                  <span>Repost</span>
-                </button>
-                <button>
-                  <img src="/images/send.png" alt="" />
-                  <span>Send</span>
-                </button>
-              </SocialActions>
-            </Article>
+            {props.articles.length > 0 &&
+              props.articles.map((article, key) => (
+                <Article key={key}>
+                  <SharedActor>
+                    <a>
+                      <img src={article.actor.image} alt="" />
+                      <div>
+                        <span>{article.actor.title}</span>
+                        <span>{article.actor.description}</span>
+                        <span>
+                          {article.actor.date.toDate().toLocaleDateString()}
+                        </span>
+                      </div>
+                    </a>
+                    <button>
+                      <img src="/images/ellipsis.svg" alt="" />
+                    </button>
+                  </SharedActor>
+                  <Description>{article.description}</Description>
+                  <SharedImg>
+                    <a>
+                      {!article.sharedImg && article.video ? (
+                        <ReactPlayer width={"100%"} url={article.video} />
+                      ) : (
+                        article.sharedImg && (
+                          <img src={article.sharedImg} alt="" />
+                        )
+                      )}
+                    </a>
+                  </SharedImg>
+                  <SocialCounts>
+                    <li>
+                      <button>
+                        <img
+                          src="https://static.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l"
+                          alt=""
+                        />
+                        <img
+                          src="https://static.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo"
+                          alt=""
+                        />
+                        <span>75</span>
+                      </button>
+                    </li>
+                    <li>
+                      <a>{article.comments}</a>
+                    </li>
+                  </SocialCounts>
+                  <SocialActions>
+                    <button>
+                      <img src="/images/like.svg" alt="" />
+                      <span>Like</span>
+                    </button>
+                    <button>
+                      <img src="/images/comment.png" alt="" />
+                      <span>Comments</span>
+                    </button>
+                    <button>
+                      <img src="/images/repost.png" alt="" />
+                      <span>Repost</span>
+                    </button>
+                    <button>
+                      <img src="/images/send.png" alt="" />
+                      <span>Send</span>
+                    </button>
+                  </SocialActions>
+                </Article>
+              ))}
           </Content>
           <PostModal showModal={showModal} handleClick={handleClick} />
         </Container>
@@ -305,6 +316,8 @@ const SocialCounts = styled.ul`
       display: flex;
       text-align: center;
       align-items: center;
+      border: none;
+      background-color: white;
       img {
         height: 23px;
         width: 30px;
@@ -324,6 +337,8 @@ const SocialActions = styled.div`
     align-items: center;
     padding: 7px;
     color: #0a66c2;
+    border: none;
+    background-color: white;
     span {
       margin-left: 2px;
     }
