@@ -67,7 +67,7 @@ export function postArticleAPI(payload) {
               date: payload.timestamp,
               image: payload.user.photoURL,
             },
-            video: payload.video,
+            video: "",
             sharedImg: downloadURL,
             comments: 0,
             description: payload.description,
@@ -75,18 +75,35 @@ export function postArticleAPI(payload) {
         }
       );
     } else if (payload.video) {
-      db.collection("articles").add({
-        actor: {
-          description: payload.user.email,
-          title: payload.user.displayName,
-          date: payload.timestamp,
-          image: payload.user.photoURL,
+      const upload = storage
+        .ref(`images/${payload.video.name}`)
+        .put(payload.video);
+      upload.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(`Progress:${progress}%`);
+          if (snapshot.state === "RUNNING") {
+            console.log(`Progress:${progress}%`);
+          }
         },
-        video: payload.video,
-        sharedImg: "",
-        comments: 0,
-        description: payload.description,
-      });
+        (error) => console.log(error.code),
+        async () => {
+          db.collection("articles").add({
+            actor: {
+              description: payload.user.email,
+              title: payload.user.displayName,
+              date: payload.timestamp,
+              image: payload.user.photoURL,
+            },
+            video: payload.video,
+            sharedImg: "",
+            comments: 0,
+            description: payload.description,
+          });
+        }
+      );
     }
   };
 }
